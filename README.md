@@ -4,9 +4,9 @@
 
 Hi, I'm [Moshiur Rahman](https://twitter.com/moshiurse/), a passionate Full Stack web developer from bangladesh. I want to work on something that I dream about a lot. I am always concerned about my code quality and project architecture.
 
-<h3>I have experence with</h3>
+<h3>Technology I am concerned about</h3>
 <p>
-  <img alt="angular" src="https://img.shields.io/badge/-Javascript-1DA1F2?style=flat-square&logo=javascript&logoColor=white" />
+  <img alt="angular" src="https://img.shields.io/badge/-Javascript-1DA1F2?style=flat-square&logo=javascript&logoColor=yellow" />
   <img alt="angular" src="https://img.shields.io/badge/-Jquery-1DA1F2?style=flat-square&logo=jquery&logoColor=white" />
   <img alt="angular" src="https://img.shields.io/badge/-Angular-DD0031?style=flat-square&logo=angular&logoColor=white" />
   <img alt="Webpack" src="https://img.shields.io/badge/-Webpack-8DD6F9?style=flat-square&logo=webpack&logoColor=white" /> 
@@ -23,17 +23,7 @@ Hi, I'm [Moshiur Rahman](https://twitter.com/moshiurse/), a passionate Full Stac
   <img alt="Nodejs" src="https://img.shields.io/badge/-Nodejs-43853d?style=flat-square&logo=Node.js&logoColor=white" />
   <img alt="Nodejs" src="https://img.shields.io/badge/-Firebase-1967D2?style=flat-square&logo=firebase&logoColor=FFE188" />
 </p>
-<!--
-**moshiurse/moshiurse** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<h3>Find me at</h3>
+<p><a href="https://github.com/moshiurse" target="_blank"><img alt="Github" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a> <a href="https://twitter.com/moshiurse" target="_blank"><img alt="Twitter" src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" /></a> <a href="https://www.linkedin.com/in/moshiur-rahman-98a103107" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> <a href="https://www.facebook.com/moshiur.se" target="_blank"><img alt="Facebook" src="https://img.shields.io/badge/facebook-%2312100E.svg?&style=for-the-badge&logo=facebook&logoColor=white" /></a>
+</p>
