@@ -8,7 +8,7 @@ Hi, I'm [Moshiur Rahman](https://twitter.com/moshiurse/), a passionate Full Stac
 <p>
   <img alt="angular" src="https://img.shields.io/badge/-Javascript-1DA1F2?style=flat-square&logo=javascript&logoColor=yellow" />
   <img alt="angular" src="https://img.shields.io/badge/-Jquery-1DA1F2?style=flat-square&logo=jquery&logoColor=white" />
-  <img alt="angular" src="[https://img.shields.io/badge/-React-087ea4?style=flat-square&logo=react&logoColor=white" />
+  <img alt="react" src="https://img.shields.io/badge/-React-087ea4?style=flat-square&logo=react&logoColor=white" />
   <img alt="angular" src="https://img.shields.io/badge/-Angular-DD0031?style=flat-square&logo=angular&logoColor=white" />
   <img alt="Webpack" src="https://img.shields.io/badge/-Webpack-8DD6F9?style=flat-square&logo=webpack&logoColor=white" /> 
   <img alt="TypeScript" src="https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" />
