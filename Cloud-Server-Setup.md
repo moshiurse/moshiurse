@@ -1,3 +1,39 @@
+### Create a new User with sudo enabled<br>
+Sometimes with a root user, things might not work properly. So creating a new user with sudo permission is a better option.
+
+**Login to your server first.**
+```
+ssh root@your_ip
+```
+**Add user**(add **sudo** if you see : 'adduser: Only root may add a user or group to the system.')
+```
+adduser moshiur
+```
+You will be prompted to create and verify a password for the user. set password twice.<br>
+You’ll be asked to fill in some information about the new user. It is fine to accept the defaults and leave this information blank.
+
+**Adding the User to the sudo Group**
+
+```
+sudo usermod -aG sudo moshiur
+```
+
+**Testing sudo Access**
+
+```
+su - sammy
+```
+
+As the new user, verify that you can use sudo by prepending sudo to the command that you want to run with superuser privileges.<br>
+For example, you can list the contents of the /root directory, which is normally only accessible to the root user.
+```
+sudo ls -la /root
+```
+
+[You can follow this Link to know elaboratly](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-sudo-enabled-user-on-ubuntu-22-04-quickstart)
+
+
+
 #### Installing Nginx
 
 Follow this Link 
