@@ -9,7 +9,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig(() => {
   return {
-<!--  If issue arrises related cra use define  -->
+  // If issue arrises related cra use define
    define: {
       'process.env': {},
     },
@@ -34,7 +34,7 @@ mv public/index.html .
 ```
 
 ```
-<link rel="icon" href="%PUBLIC_URL%/favicon.ico" /> =>=>
+<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
 <link rel="icon" href="/favicon.ico" />
 ```
 
