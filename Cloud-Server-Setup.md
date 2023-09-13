@@ -7,7 +7,7 @@ ssh root@your_ip
 ```
 **Add user**(add **sudo** if you see : 'adduser: Only root may add a user or group to the system.')
 ```
-adduser moshiur
+sudo adduser moshiur
 ```
 You will be prompted to create and verify a password for the user. set password twice.<br>
 You’ll be asked to fill in some information about the new user. It is fine to accept the defaults and leave this information blank.
@@ -21,7 +21,7 @@ sudo usermod -aG sudo moshiur
 **Testing sudo Access**
 
 ```
-su - sammy
+su - moshiur
 ```
 
 As the new user, verify that you can use sudo by prepending sudo to the command that you want to run with superuser privileges.<br>
