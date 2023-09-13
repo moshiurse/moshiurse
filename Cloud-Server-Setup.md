@@ -1,4 +1,5 @@
-### Create a new User with sudo enabled<br>
+# Cloud Server setup
+## Create a new User with sudo enabled<br>
 Sometimes with a root user, things might not work properly. So creating a new user with sudo permission is a better option.
 
 **Login to your server first.**
@@ -32,43 +33,54 @@ sudo ls -la /root
 
 [You can follow this Link to know elaboratly](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-sudo-enabled-user-on-ubuntu-22-04-quickstart)
 
+## Installing Nginx
+
+```
+sudo apt update
+```
+```
+sudo apt install nginx
+```
+```
+sudo ufw app list<br>
+```
+```
+sudo ufw allow 'Nginx HTTP'
+```
+```
+sudo ufw status
+```
 
 
-#### Installing Nginx
-
-Follow this Link 
-https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04
-
-> sudo apt update <br>
-> sudo apt install nginx<br>
-> sudo ufw app list<br>
-> sudo ufw allow 'Nginx HTTP'<br>
-> sudo ufw status<br>
-
-if it is showing **inactive** that means your firewall is disabled 
+If it is showing **inactive** that means your firewall is disabled 
 Run this command 
-> sudo ufw enable
+```
+sudo ufw enable
+```
 
-Now check nginx status
-> sudo systemctl status nginx
+Now check the nginx status
+```
+sudo systemctl status nginx
+```
 
 It must show running. Now test the process.
 
-You can access the default Nginx landing page to confirm that the software is running properly by 
-navigating to your server’sIP address. If you do not know your server’s IP address,
+You can access the default Nginx landing page to confirm that the software is running correctly by 
+navigating to your server’s address. If you do not know your server’s IP address,
 you can get it a few different ways.
 
 ``` 
 ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//' 
 ```
 
-##### Managing nginx process
-> sudo systemctl stop nginx // **start stop restart reload disable enable** (default nginx is enabled)
-
-If you are simply making configuration changes, you can often reload Nginx without dropping
+If you are making configuration changes, you can often reload Nginx without dropping
 connections instead of restarting it. To do this, type the following:
+```
+sudo systemctl reload nginx
+```
 
-> sudo systemctl reload nginx
+[To know more about nginx setup please follow this link](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04)
+
 
 #### Install Nodejs
 
