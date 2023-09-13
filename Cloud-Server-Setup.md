@@ -115,8 +115,7 @@ nvm use v14.10.0
 
 
 ## Install PHP
-Follow this Link
-(https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Nginx-PHP-FPM-config-example)
+
 ```
 sudo apt update -y
 ```
@@ -266,14 +265,25 @@ systemctl status mysql.service
 [Another helpful link](https://www.hostinger.com/tutorials/mysql/how-create-mysql-user-and-grant-permissions-command-line)
 
 
-#### Install composer 
-https://getcomposer.org/download/
+## Install composer 
 
-#### Install git
-normally git is installed by default
-https://www.atlassian.com/git/tutorials/install-git
+[Get composer](https://getcomposer.org/download)
+
+## Install git
+
+Normally git is installed by default but if it not installed [Follow this link](https://www.atlassian.com/git/tutorials/install-git#linux) 
+
+## Install ruby (if needed)
+```
+sudo apt install ruby ruby-dev
+```
+```
+sudo gem install bundler
+```
 
 
-#### Secure HTTPS with Certbot/Lets encrypt
-https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04
+## Secure HTTPS with Certbot/Lets encrypt
+
+[Follow this Link](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04)
+
 
