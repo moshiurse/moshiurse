@@ -183,17 +183,88 @@ sudo apt install openssl php-bcmath php-curl php-json php-mbstring php-mysql php
 [Follow this link](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Nginx-PHP-FPM-config-example)
 
 ## Install MySQL server
+```
+sudo apt update
+```
+```
+sudo apt install mysql-server
+```
+```
+sudo systemctl start mysql.service
+```
+Now login to mysql
+```
+sudo mysql
+```
+```
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root_password';
+```
+```
+exit
+```
+You have finished setting up a password for the root user. Now login again to back to Then go back to using the default authentication method using this command.
+```
+mysql -u root -p
+```
+```
+ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;
+```
+This will mean that you can once again connect to MySQL as your root user using the sudo mysql command.
 
+```
+sudo mysql_secure_installation
+```
+set strong passwords, and other options according to your needs. 
 
+Now login again using sudo or using password
+```
+sudo mysql
+```
+OR
+```
+mysql -u root -p
+```
+Create an user with password
+```
+CREATE USER 'username'@'host' IDENTIFIED WITH authentication_plugin BY 'password';
+```
 
-https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04
+if it's showing error like **Your password does not satisfy the current policy requirements**
+```
+SHOW VARIABLES LIKE 'validate_password%';
+```
+You will see some variables related to passwords. Then set these variables like below:
 
-To create users and permission for the database 
+```
+SET GLOBAL validate_password.policy=LOW;SET GLOBAL validate_password.length=0;SET GLOBAL validate_password.mixed_case_count=0;SET GLOBAL validate_password.number_count=0;SET GLOBAL validate_password.special_char_count=0;
+```
+Now again try create User. It will be successfull. Grant priviledge now: 
+```
+GRANT CREATE, ALTER, DROP, INSERT, UPDATE, INDEX, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'moshiur'@'localhost' WITH GRANT OPTION;
+```
+To grant all privilege : (Risky)
+```
+GRANT ALL PRIVILEGES ON *.* TO 'moshiur'@'localhost' WITH GRANT OPTION;
+```
+Following this, it’s good practice to run the FLUSH PRIVILEGES command. This will free up any memory that the server cached as a result of the preceding CREATE USER and GRANT statements.
+```
+FLUSH PRIVILEGES;
+```
 
-https://www.hostinger.com/tutorials/mysql/how-create-mysql-user-and-grant-permissions-command-line
+```
+exit
+```
+Login with your created user.
+```
+mysql -u moshiur -p
+```
+**Test mysql after exit**
+```
+systemctl status mysql.service
+```
+[Follown this link to deep dive](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)<br>
+[Another helpful link](https://www.hostinger.com/tutorials/mysql/how-create-mysql-user-and-grant-permissions-command-line)
 
-A nice tiutorial on Install Linux, Nginx, MySQL, PHP (LEMP stack) on Ubuntu
-https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-20-04
 
 #### Install composer 
 https://getcomposer.org/download/
