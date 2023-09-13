@@ -39,10 +39,10 @@ sudo ls -la /root
 sudo apt update
 ```
 ```
-sudo apt install nginx
+sudo apt install nginx -y
 ```
 ```
-sudo ufw app list<br>
+sudo ufw app list
 ```
 ```
 sudo ufw allow 'Nginx HTTP'
@@ -84,28 +84,61 @@ sudo systemctl reload nginx
 
 #### Install Nodejs
 
-Follow this link
-https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
+Personally, I recommend installing node with **NVM**.
 
-Personally I recommend install node with nvm.
+[Follow this link if you preferred another way of installing](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04)
 
-#### Install PHP
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh
+```
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+```
+```
+source ~/.bashrc
+```
+```
+nvm list-remote
+```
+Now install your desired version. Notice the **v** before version number.(v20.6.1)
+```
+nvm install vYOUR_VERSION
+```
+You can check your current installed versions.
+```
+nvm list
+```
+You can switch to your versions also.
+```
+nvm use v14.10.0
+```
+
+
+## Install PHP
 Follow this Link
 (https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Nginx-PHP-FPM-config-example)
-
-sudo apt-get update -y
-
-sudo apt-get upgrade -y
-
-sudo apt-get install php8.1-fpm -y
+```
+sudo apt update -y
+```
+```
+sudo apt upgrade -y
+```
+```
+sudo apt install php8.1-fpm -y
+```
+```
 sudo systemctl status php8.1-fpm
+```
+```
 sudo nano /etc/nginx/sites-available/default
+```
 
-Changes Portion 
-# Add index.php to setup Nginx, PHP & PHP-FPM config
-  index index.php index.html index.htm index.nginx-debian.html;
-  
-    # pass PHP scripts on Nginx to FastCGI (PHP-FPM) server
+**Changes Portion**(Its not whole file, change only some part of it)
+
+Add **index.php**, fpm change and deny htaccess block
+```
+index index.php index.html index.htm index.nginx-debian.html;
+
   location ~ \.php$ {
     include snippets/fastcgi-php.conf;
 
@@ -114,27 +147,48 @@ Changes Portion
     # Nginx php-cgi config :
     # Nginx PHP fastcgi_pass 127.0.0.1:9000;
   }
-  
-  #### if Apache and Nginx document roots concur
-  location ~ /\.ht {
-    deny all;
-  }
 
+# deny access to Apache .htaccess on Nginx with PHP, 
+location ~ /\.ht {
+    deny all;
+}
+```
+
+```
 sudo nginx -t
+```
+> nginx: the configuration file /etc/nginx/nginx.conf syntax is ok <br>
+> nginx: configuration file /etc/nginx/nginx.conf test is successful<br>
+
+If you get this message then your config is ok.
+```
 sudo systemctl restart nginx
+```
+```
 sudo chmod -R 777 /var/www/html
+```
+```
 echo "<?php phpinfo(); ?>" >> /var/www/html/info.php
+```
+Check if it is working :
+```
+http://YOUR_IP/info.php
+```
 
 Install some additional php extension
+```
+sudo apt install openssl php-bcmath php-curl php-json php-mbstring php-mysql php-tokenizer php-xml php-zip
+```
 
-apt install openssl php-bcmath php-curl php-json php-mbstring php-mysql php-tokenizer php-xml php-zip
+[Follow this link](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Nginx-PHP-FPM-config-example)
 
-#### Install mariadb server or mysql server
+## Install MySQL server
+
+
 
 https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04
-https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-ubuntu-20-04
 
-To create users and permission for database 
+To create users and permission for the database 
 
 https://www.hostinger.com/tutorials/mysql/how-create-mysql-user-and-grant-permissions-command-line
 
