@@ -284,6 +284,45 @@ sudo gem install bundler
 
 ## Secure HTTPS with Certbot/Lets encrypt
 
+```
+sudo apt install certbot python3-certbot-nginx
+```
+```
+sudo nano /etc/nginx/sites-available/your_domain.com
+```
+Change server_name part as
+```
+server_name your_domain.com www.your_domain.com;
+```
+```
+sudo nginx -t
+```
+```
+sudo systemctl reload nginx
+```
+**Allowing HTTPS Through the Firewall**
+```
+sudo ufw allow 'Nginx Full'
+sudo ufw delete allow 'Nginx HTTP'
+```
+**Obtain certificate**
+```
+sudo certbot --nginx -d example.com -d www.example.com
+```
+Enter your email if you want. After submitting the certificate successfully obtained.
+
+**Note:** If its not working properly that means you are not ointing domain to this ip properly. <br>
+Please add @ and www both as A record. That's how I solved my issue.
+
+**Certbot auto renewal test**
+```
+sudo systemctl status certbot.timer
+```
+```
+sudo certbot renew --dry-run
+```
+
+
 [Follow this Link](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04)
 
 
