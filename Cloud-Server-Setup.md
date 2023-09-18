@@ -186,7 +186,7 @@ sudo apt install openssl php-bcmath php-curl php-json php-mbstring php-mysql php
 sudo apt update
 ```
 ```
-sudo apt install mysql-server
+sudo apt install mysql-server -y
 ```
 ```
 sudo systemctl start mysql.service
@@ -225,7 +225,7 @@ mysql -u root -p
 ```
 Create an user with password
 ```
-CREATE USER 'username'@'host' IDENTIFIED WITH authentication_plugin BY 'password';
+CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
 ```
 
 if it's showing error like **Your password does not satisfy the current policy requirements**
@@ -275,7 +275,7 @@ Normally git is installed by default but if it not installed [Follow this link](
 
 ## Install ruby (if needed)
 ```
-sudo apt install ruby ruby-dev
+sudo apt install ruby ruby-dev -y
 ```
 ```
 sudo gem install bundler
