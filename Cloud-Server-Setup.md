@@ -1,4 +1,4 @@
-# Cloud Server setup
+# Cloud Server setup (Ubuntu)
 ## Create a new User with sudo enabled<br>
 Sometimes with a root user, things might not work properly. So creating a new user with sudo permission is a better option.
 
@@ -57,6 +57,13 @@ Run this command
 ```
 sudo ufw enable
 ```
+**Note: Command may disrupt existing ssh connections. Please allow ssh port after this**
+
+```
+sudo ufw allow 22
+
+```
+**Add any additional ports that need to be allowed too.(80,443)**
 
 Now check the nginx status
 ```
