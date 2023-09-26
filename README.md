@@ -31,7 +31,7 @@ Hi, I'm [Moshiur Rahman](https://twitter.com/moshiurse/), a passionate Full Stac
 </div>
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=maurodesouza&locale=en&mode=daily&theme=dark&hide_border=false&border_radius=5&order=3" height="220" alt="streak graph"  />
+  <img src="https://streak-stats.demolab.com?user=moshiurse&locale=en&mode=daily&theme=dark&hide_border=false&border_radius=5&order=3" height="220" alt="streak graph"  />
 </div>
 
 ### Leetcode profile
