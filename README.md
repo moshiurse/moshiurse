@@ -48,3 +48,5 @@ Some informative post of mine :
 > [How to setup cloud server](https://github.com/moshiurse/moshiurse/blob/main/Cloud-Server-Setup.md/)
 
 > [Migrate CRA to Vite](https://github.com/moshiurse/moshiurse/blob/main/Migrate-CRA-to-vite.md/)
+
+> [Fix MySQL Shutdown issue on Xampp](https://github.com/moshiurse/moshiurse/blob/main/fix-mysql-shutdown-unexpectedly-issue-xampp.md)
