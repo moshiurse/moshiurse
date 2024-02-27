@@ -130,8 +130,11 @@ sudo apt update -y
 sudo apt upgrade -y
 ```
 ```
-sudo apt install php8.1-fpm -y
+sudo apt install --no-install-recommends php8.1
 ```
+
+The **--no-install-recommends** flag will ensure that other packages like the Apache web server are not installed.
+
 ```
 sudo systemctl status php8.1-fpm
 ```
