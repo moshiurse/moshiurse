@@ -1,6 +1,8 @@
 # Cloud Server setup (Ubuntu)
-## Create a new User with sudo enabled<br>
-Sometimes with a root user, things might not work properly. So creating a new user with sudo permission is a better option.
+### Create a new User with sudo enabled<br>
+<details>
+  <summary><i>See Here</i></summary>
+  Sometimes with a root user, things might not work properly. So creating a new user with sudo permission is a better option.
 
 **Login to your server first.**
 ```
@@ -32,10 +34,14 @@ sudo ls -la /root
 ```
 
 [You can follow this Link to know elaboratly](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-sudo-enabled-user-on-ubuntu-22-04-quickstart)
+</details>
 
-## Installing Nginx
 
-```
+### Installing Nginx
+<details>
+  <summary><i>See Here</i></summary>
+
+  ```
 sudo apt update
 ```
 ```
@@ -88,10 +94,13 @@ sudo systemctl reload nginx
 
 [To know more about nginx setup please follow this link](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04)
 
+</details>
 
-#### Install Nodejs
+### Install Nodejs
+<details>
+  <summary><i>See Here</i></summary>
 
-Personally, I recommend installing node with **NVM**.
+  Personally, I recommend installing node with **NVM**.
 
 [Follow this link if you preferred another way of installing](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04)
 
@@ -119,11 +128,14 @@ You can switch to your versions also.
 ```
 nvm use v14.10.0
 ```
+</details>
 
+### Install PHP
 
-## Install PHP
+<details>
+  <summary><i>See Here</i></summary>
 
-```
+  ```
 sudo apt update -y
 ```
 ```
@@ -191,8 +203,14 @@ sudo apt install openssl php-bcmath php-curl php-json php-mbstring php-mysql php
 
 [Follow this link](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Nginx-PHP-FPM-config-example)
 
-## Install MySQL server
-```
+
+</details>
+
+### Install MySQL server
+<details>
+  <summary><i>See Here</i></summary>
+
+  ```
 sudo apt update
 ```
 ```
@@ -274,6 +292,7 @@ systemctl status mysql.service
 [Follown this link to deep dive](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)<br>
 [Another helpful link](https://www.hostinger.com/tutorials/mysql/how-create-mysql-user-and-grant-permissions-command-line)
 
+</details>
 
 ## Install composer 
 
@@ -292,9 +311,11 @@ sudo gem install bundler
 ```
 
 
-## Secure HTTPS with Certbot/Lets encrypt
+### Secure HTTPS with Certbot/Lets encrypt
+<details>
+  <summary><i>See Here</i></summary>
 
-```
+  ```
 sudo apt install certbot python3-certbot-nginx
 ```
 ```
@@ -335,4 +356,6 @@ sudo certbot renew --dry-run
 
 [Follow this Link](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04)
 
+
+</details>
 
