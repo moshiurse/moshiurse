@@ -1,7 +1,7 @@
 # Cloud Server setup (Ubuntu)
 ### Create a new User with sudo enabled<br>
 <details>
-  <summary><i>See Here</i></summary>
+  <summary><h2>See Here</h2></summary>
   Sometimes with a root user, things might not work properly. So creating a new user with sudo permission is a better option.
 
 **Login to your server first.**
