@@ -1,7 +1,9 @@
 # Cloud Server setup (Ubuntu)
-### Create a new User with sudo enabled<br>
 <details>
-  <summary><h2>See Here</h2></summary>
+  <summary>
+		<img width="500px" height="100px" src="https://github.com/moshiurse/moshiurse/assets/15215020/96532897-8c64-4316-89d2-4e70236f7f33" alt="Presentation" />
+	</summary>
+
   Sometimes with a root user, things might not work properly. So creating a new user with sudo permission is a better option.
 
 **Login to your server first.**
@@ -37,11 +39,10 @@ sudo ls -la /root
 </details>
 
 
-### Installing Nginx
 <details>
-  <summary><i>See Here</i></summary>
+    <summary><img width="500px" height="100px" src="https://github.com/moshiurse/moshiurse/assets/15215020/49fcb549-afe3-473f-a504-b0cffc512630" alt="Nginx" /></summary>
 
-  ```
+```
 sudo apt update
 ```
 ```
@@ -96,9 +97,8 @@ sudo systemctl reload nginx
 
 </details>
 
-### Install Nodejs
 <details>
-  <summary><i>See Here</i></summary>
+  <summary><img width="500px" height="100px" src="https://github.com/moshiurse/moshiurse/assets/15215020/67d55df7-9013-421a-8a36-a4ca657000af" alt="Nodejs" /></summary>
 
   Personally, I recommend installing node with **NVM**.
 
