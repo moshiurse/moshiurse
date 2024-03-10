@@ -1,7 +1,7 @@
 # Cloud Server setup (Ubuntu)
 <details>
   <summary>
-		<img width="500px" height="100px" src="https://github.com/moshiurse/moshiurse/assets/15215020/96532897-8c64-4316-89d2-4e70236f7f33" alt="Presentation" />
+		<img width="500px" height="50px" src="https://github.com/moshiurse/moshiurse/assets/15215020/96532897-8c64-4316-89d2-4e70236f7f33" alt="Presentation" />
 	</summary>
 
   Sometimes with a root user, things might not work properly. So creating a new user with sudo permission is a better option.
@@ -40,7 +40,7 @@ sudo ls -la /root
 
 
 <details>
-    <summary><img width="500px" height="100px" src="https://github.com/moshiurse/moshiurse/assets/15215020/49fcb549-afe3-473f-a504-b0cffc512630" alt="Nginx" /></summary>
+    <summary><img width="500px" height="50px" src="https://github.com/moshiurse/moshiurse/assets/15215020/49fcb549-afe3-473f-a504-b0cffc512630" alt="Nginx" /></summary>
 
 ```
 sudo apt update
@@ -98,7 +98,7 @@ sudo systemctl reload nginx
 </details>
 
 <details>
-  <summary><img width="500px" height="100px" src="https://github.com/moshiurse/moshiurse/assets/15215020/67d55df7-9013-421a-8a36-a4ca657000af" alt="Nodejs" /></summary>
+  <summary><img width="500px" height="50px" src="https://github.com/moshiurse/moshiurse/assets/15215020/67d55df7-9013-421a-8a36-a4ca657000af" alt="Nodejs" /></summary>
 
   Personally, I recommend installing node with **NVM**.
 
