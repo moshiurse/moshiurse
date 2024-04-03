@@ -48,6 +48,28 @@ CTRL + L
 
 CTRL + D to exit shell
 CTRL + A for go to beginning of a command
+CTRL + E for go to end of a command
+Ctrl + U	Delete from the cursor to the start of the line.
+Ctrl + Z	Pause the current process (can be resumed).
+
+bg %1 to resume again
+
+To Show bash history(Store after logout)
+```
+cat .bash_history
+```
+Ordered History
+```
+history
+```
+Excute nth history
+```
+!17
+```
+Execute last 5th command
+```
+!-5
+```
 
 
 
