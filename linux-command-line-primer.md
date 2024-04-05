@@ -70,8 +70,11 @@ Execute last 5th command
 ```
 !-5
 ```
-
-
+Show history time also - set the time format
+```
+HISTTIMEFORMAT="%y-%m-%d %T --> "
+```
+Now check the history
 
 
 
