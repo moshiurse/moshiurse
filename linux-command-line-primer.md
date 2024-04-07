@@ -76,5 +76,24 @@ HISTTIMEFORMAT="%y-%m-%d %T --> "
 ```
 Now check the history
 
-
-
+### Sudo root users
+```
+sudo su
+```
+Check user usergroup using id
+```
+id
+```
+to logout 
+```
+exit
+```
+Go to root as root user
+```
+sudo su - 
+```
+directory changed to /root
+```
+pwd
+```
+Look the # for root user instead of $
