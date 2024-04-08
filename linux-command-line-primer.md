@@ -215,3 +215,72 @@ The string `lrwxrwxrwx` is composed of two parts:
         * `x` (execute): Allows the owner to follow the symlink and access the target file/directory.
     * **Group Permissions (rwx):** The second set of three characters defines permissions for the **group** that owns the symlink. These permissions follow the same meaning as owner permissions: `r` (read), `w` (write), and `x` (execute).
     * **Other Users Permissions (rwx):** The final set of three characters defines permissions for **all other users** on the system. Similar to owner and group permissions, these can be: `r` (read the symlink), `w` (not applicable for symlinks), and `x` (follow the symlink).
+
+
+### File timestamp
+```
+stat /etc/passwd
+```
+
+```
+Access: 2024-04-08 04:53:27.542362287 +0600
+Modify: 2024-04-08 04:53:27.492362285 +0600
+Change: 2024-04-08 04:53:27.492362285 +0600
+Birth: 2024-04-08 04:53:27.492362285 +0600
+```
+
+```
+ls -lt //modification time
+ls -lu //access time
+ls - lc //change
+ls -l --full-time
+```
+
+### View File
+
+**Cat**
+
+```
+cat file1
+```
+view Multiple files
+```
+cat file1 file2
+```
+View with number of lines
+```
+cat -n /etc/passwd
+```
+concatenete multiple files
+```
+cat /etc/hosts /etc/host.conf > my_host.txt
+cat my_host.txt
+```
+
+**cat has limitation. text exceeds window cannot be viewed**
+Use **more** or **less**
+
+to see realtime or watch a file
+**tail** used for to see from end
+**head** used for to see from start
+default line is 10
+```
+tail -f /var/log/auth.log
+```
+
+To see specific line number 
+```
+head -n 20 /var/log/auth.log
+```
+to see any changes to file or text use **watch**
+```
+watch ls
+```
+after 3 sec
+```
+watch -n 3 -ls -l
+```
+```
+watch -1 -d ifconfig
+```
+It will update and highlight real time if any file added or deleted 
