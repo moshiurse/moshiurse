@@ -97,3 +97,12 @@ directory changed to /root
 pwd
 ```
 Look the # for root user instead of $
+
+add user
+```
+sudo useradd deploy
+```
+Change root password
+```
+sudo passwd root
+```
