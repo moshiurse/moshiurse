@@ -284,3 +284,106 @@ watch -n 3 -ls -l
 watch -1 -d ifconfig
 ```
 It will update and highlight real time if any file added or deleted 
+
+Creating file with touch
+```
+touch sample.txt 
+```
+
+creating folder with mkdir
+```
+mkdir dir
+```
+with logs
+```
+mkdir -v dir2
+```
+multiple directory at a time
+```
+mkdir dir3 dir4
+```
+If you want to create a directory where parent is not exists
+```
+mkdir -p first/second/third
+```
+see the structure
+```
+tree first
+```
+
+Copy file using **cp**
+```
+cp file1 file2
+```
+Cp created file if not exists. Overriden file if already exists.
+
+if you want to prompt overriden message 
+```
+cp -i file1 file2
+```
+
+copy multiple files to folder
+```
+cp file1 file2 dir1/
+```
+copy a directory full contents recuirsively
+```
+cp -r dir1/ dir2/
+```
+copy file using -p to own same user
+```
+cp -p file1 dir2/
+```
+**Moving and renaming file and directory**
+```
+mv dir1/file1 dir2/
+```
+
+multiple file at once
+```
+mv file1 file2 dir2/
+```
+move all txt files to a folder
+```
+mv dir1/*.txt dir2/
+```
+
+replace a file with another happenned if file has same name
+if dir2 has already a.txt it will replace.
+```
+mv dir1/a.txt dir2/
+```
+
+To get warning use -i
+```
+mv -i dir1/a.txt dir2/
+```
+```
+mv -n dir1/a.txt dir2/
+```
+```
+mv -u dir1/a.txt dir2/
+```
+to rename
+```
+mv dir1/a.txt dir/abc.txt
+```
+move and rename 
+```
+mv dir1/a.txt dir1/dir2/aa.txt
+```
+
+**Removing file and folder**
+
+```
+rm a.txt b.txt
+```
+to delete directory use -r
+```
+rm -r a/
+```
+
+use f for force remove in case of permission problem
+```
+rm -rf a/
+```
