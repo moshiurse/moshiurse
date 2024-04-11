@@ -387,3 +387,80 @@ use f for force remove in case of permission problem
 ```
 rm -rf a/
 ```
+
+### Using Pipe
+
+command combining with head to show latest ordered data
+```
+ls -lSh /etc/ | head
+```
+getting 20th item from list
+```
+ls -lSh /etc/ | head -n 20 | tail -n 1
+```
+Getting auth info with auth failure
+```
+cat -n /var/log/auth.log | grep -a "authentication failure"
+```
+Getting total line number count
+```
+cat -n /var/log/auth.log | grep -a "authentication failure" | wc -l
+```
+
+### Command redirection
+
+```
+ls -l > ls.txt
+```
+```
+cat ls.txt  
+```
+now add another
+```
+ifconfig > ls.txt
+```
+It will overridden the previous. to avoid this **>>**
+```
+ifconfig >> ls.txt
+```
+
+to show error
+```
+tail -n 3 /etc/shadow 2>>error.txt
+```
+```
+cat error.txt
+```
+tail: cannot open '/etc/shadow' for reading: Permission denied
+
+Show normal output and error output 
+```
+tail -n 2 /etc/passwd /etc/shadow > output.txt 2>>error.txt
+```
+Show all in one file
+```
+tail -n 2 /etc/passwd /etc/shadow > output.txt 2>&1
+```
+using **cut** filter 
+```
+ifconfig | grep ether | cut -d" " -f10 > mac.txt
+```
+now you can see your mac address
+```
+cat mac.txt
+```
+
+conmbine output and save to file using **tee**
+```
+ifconfig | grep ether | cut -d" " -f10 | tee mac2.txt
+```
+
+by default tee overriden previous. to avoid use flag -a
+```
+who | tee -a mac2.txt
+```
+
+output to multiple file
+```
+uname -r | tee -a mac.txt mac2.txt
+```
