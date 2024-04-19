@@ -504,3 +504,13 @@ find . -iname Ab.txt
 find . -name ab.txt -delete
 ```
 There is many more options with find
+
+**Find and execute**
+
+```
+sudo find /etc -type f -mtime 0 -exec cat {} \;
+```
+prompt for every file
+```
+sudo find /etc -type f -mtime 0 -ok cat {} \;
+```
