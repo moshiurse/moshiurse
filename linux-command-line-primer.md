@@ -464,3 +464,43 @@ output to multiple file
 ```
 uname -r | tee -a mac.txt mac2.txt
 ```
+
+### Finding files and directories
+
+**mlocate**
+
+```
+ sudo apt install mlocate
+```
+```
+sudo updatedb
+```
+```
+ls /var/lib/mlocate
+```
+
+```
+locate -S 'shadow'
+locate -b 'shadow'
+locate -b '\shadow'
+locate -e 'shadow'
+locate -i RainShadow
+locate -b -r 'regexPattern'
+```
+
+**which**
+
+```
+which ls
+which pwd
+which -a find
+which pwd ls find
+```
+
+**find**
+```
+find . -name ab.txt
+find . -iname Ab.txt
+find . -name ab.txt -delete
+```
+There is many more options with find
