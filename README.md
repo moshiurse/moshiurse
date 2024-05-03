@@ -30,9 +30,13 @@ Hi, I'm [Moshiur Rahman](https://twitter.com/moshiurse/), a passionate Full Stac
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=moshiurse&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=false" height="150" alt="languages graph"  />
 </div>
 
+[![roadmap.sh](https://api.roadmap.sh/v1-badge/tall/645790c405999de060bc5f05?variant=dark)](https://roadmap.sh)
+
 <div align="center">
   <img src="https://streak-stats.demolab.com?user=moshiurse&locale=en&mode=daily&theme=dark&hide_border=false&border_radius=5&order=3" height="220" alt="streak graph"  />
 </div>
+
+
 
 ### Leetcode profile
 <div align="center">
