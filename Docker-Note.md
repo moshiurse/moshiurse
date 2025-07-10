@@ -35,3 +35,37 @@
 - Contains Application files
 - Contains Third party libraries
 - Contains Environment variables
+
+### Procedure
+
+```
+FROM node:alpine
+COPY . /app
+WORKDIR /app
+
+CMD node app.js
+```
+
+`docker build -t hello-docker .`
+
+To check docker images list
+
+`docker image ls` OR `docker images`
+
+```
+REPOSITORY   TAG     IMAGE ID      CREATED            SIZE
+hello-docker latest  7b6c118df339  About a minute ago 163MB
+```
+Run Docker image using `docker run hello-docker`
+
+For pulling any images `docker pull ubuntu`
+
+For pull and run any images `docker run ubuntu`
+
+See the list of running images `docker ps`
+
+See the list of all images `docker ps -a` OR `docker ps --all`
+
+`docker ps -all` command will return just last created container.
+
+To start a container with interactive mode `docker run -it ubuntu`
