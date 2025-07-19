@@ -94,6 +94,8 @@ To login as specific user `docker exec -it -u moshiur CONTAINER_ID bash`
 
 ```
 FROM 14.16.0-alpine-3.13 //Chose base image node alpine
+RUN addgroup app && adduser -S -G app app //create user and usergroup
+USER app //set user
 WORKDIR /app //If we set it then no need to use /app when copy
 COPY package*.json /app/ //It will copy all package*.json file app folder
 COPY . . //It will copy all file to app folder
@@ -102,8 +104,116 @@ ADD . . //we can use direct link to this or also add zip which will extract zip 
 
 RUN npm install
 
+ENV API_URL=api.com //set env
+
+#exec form
+CMD ["npm", "start"]
+
+#shell form
+CMD npm start
+
+ENTRYPOINT  ["npm", "start"]
+
+
 ```
 
 Build docker `docker built -t react-app .`
 
 `.dockerignore` will ignore some files or folder Ie: node_modules
+
+`printenv`, `printenv API_URL` OR `$API_URL` to check env variables
+
+We can run docker using `docker run react-app npm start`
+
+But it is not practical, So here comes `Entrypoint & CMD`
+
+`CMD` can be overridden by `docker run react-app npm start` but `Entrypoint` is not overriden by this.
+
+**To optimize** docker build 
+
+```
+COPY package*.json .
+RUN npm install
+COPY . .
+```
+
+To remove images `docker image prune`
+
+To remobe containers `docker comtainer prune`
+
+To remove specific image `docker rm IMAGE_ID_OR_NAME`
+
+### Tagging images
+
+On build `docker build react-app:1.0.0 .`
+
+Manually tag `docker image tag react-app:latest react-app:1.0.0`
+
+### Pushing images to hub
+`docker image tag react-app:latest moshiurse/react-app:1.0.0`
+
+`docker push moshiurse/react-app:1.0.0`
+
+**Docker image save** `docker image save -o react-app.tar react-app:1.0.0`
+
+**Docker image load** `docker image load -i react-app.tar`
+
+### Containers
+
+Run container in a detached mode `docker run -d react-app`
+
+`docker ps` get all the containers
+
+Run container with name `docker run -d --name blue-bird react-app`
+
+View logs `docker logs CONTAINER_ID` `docker logs -f CONTAINER_ID`
+
+`docker logs -n 10 ID` to log last 10 line
+`docker logs -n -t 10 ID` to see timestamp
+
+**Port Publish**  `docker run -d -p 3000:3000 --name=react react-app`
+
+**Execute commands in running container** `docker exec react ls`
+
+Difference of `run` and `exec` is run always create new container but exec is operating on running container.
+
+**Start Container** `docker start react`
+**Stop Container** `docker stop react`
+**Remove Container** `docker rm react` if your container is runnung then you need to stop first then remove.
+
+You can force remove `docker rm -f react` 
+
+### Filesystem
+
+Each container has its own filesystem.
+
+Volum create `docker volume app-data`<br>
+Volume inspect `docker volume inspect app-data`
+
+```
+{
+    "CreatedAt": "2025-03-04T04:41:09Z",
+    "Driver": "local",
+    "Labels": {
+        "com.docker.volume.anonymous": ""
+    },
+    "Mountpoint": "/var/lib/docker/volumes/71a9/_data",
+    "Name": "app-data",
+    "Options": null,
+    "Scope": "local"
+}
+```
+Docker run with creating volume `docker run -d -p 4000:3000 -v app-data:/app/data react-app`
+
+to prevent permission issue on creating volume create folder using `USER` `RUN mkdir data`
+
+volumes data remain same even if we delete the container.
+
+Copy file from container to host `docker cp ID:/app/file.txt .`<br>
+Copy file from host to container `docker cp secret.txt ID:/app`
+
+So by this we can also share so source code with container so that we get the reflected changes when we changes anything.
+
+`docker run -d -p 5000:3000 -v $(pwd):/app react-app`
+
+But running all these are pain , right ? So here come `Docker compose`
