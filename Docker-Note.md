@@ -217,3 +217,52 @@ So by this we can also share so source code with container so that we get the re
 `docker run -d -p 5000:3000 -v $(pwd):/app react-app`
 
 But running all these are pain , right ? So here come `Docker compose`
+
+### Docker Compose
+
+The default filename of compose file is `docker-compose.yml`
+
+**Sample File**
+
+```
+version: "3.8"
+services:
+    frontend:
+        build: ./frontend
+        ports:
+            - 3000:3000
+    backend:
+        build: ./backend
+        ports:
+            - 3001:3001
+        environments:
+            DB_URL: mongodb://db/test_db
+        volumes:
+            - ./backend:/app
+        command: ./wait-for db:27017 && migrate-mongo up && npm start
+    db:
+        image: mongo:4.0-xenial
+        ports:
+            - 27017:27017
+        volumes: 
+            - test_db:/data/db
+volumes:
+    test_db
+```
+
+Build using compose `docker compose build`<br>
+Build using compose with no cache `docker compose build --no-cache`<br>
+Docker up with build `docker compose up --build`<br>
+Docker up with detached mode `docker compose up -d`<br>
+Check started container `docker compose ps`<br>
+Down `docker compose down`
+
+### Docker Network
+
+`docker network ls`
+
+### View Logs
+
+`docker compose logs`
+
+For specific container logs `docker logs ID -f`
